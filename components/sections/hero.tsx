@@ -1,8 +1,9 @@
-'use client'
+"use client";
 
-import { motion } from 'motion/react'
-import { TextEffect } from '@/components/motion/text-effect'
-import { Github, Linkedin, Mail, ArrowDown } from 'lucide-react'
+import { motion } from "motion/react";
+import { TextEffect } from "@/components/motion/text-effect";
+import { BackgroundBoxes } from "@/components/motion/background-boxes";
+import { Github, Linkedin, Mail, ArrowDown } from "lucide-react";
 
 export function Hero() {
   return (
@@ -10,13 +11,13 @@ export function Hero() {
       id="hero"
       className="relative flex min-h-screen items-center justify-center overflow-hidden px-6"
     >
-      {/* Grid background */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border))_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
+      {/* Background Boxes */}
+      <BackgroundBoxes />
 
       {/* Glow effect */}
-      <div className="absolute left-1/2 top-1/4 h-64 w-64 -translate-x-1/2 rounded-full bg-primary/20 blur-[120px]" />
+      <div className="absolute left-1/2 top-1/4 z-10 h-64 w-64 -translate-x-1/2 rounded-full bg-primary/20 blur-[120px]" />
 
-      <div className="relative z-10 mx-auto max-w-4xl text-center">
+      <div className="relative z-20 mx-auto max-w-4xl text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -46,7 +47,9 @@ export function Hero() {
           as="p"
           className="mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl"
         >
-          Desenvolvedor Full-Stack com 4+ anos de experiencia criando aplicacoes web escalaveis e de alta performance com React, TypeScript, Next.js e .NET
+          Desenvolvedor Full-Stack com 4+ anos de experiencia criando aplicacoes
+          web escalaveis e de alta performance com React, TypeScript, Next.js e
+          .NET
         </TextEffect>
 
         <motion.div
@@ -109,7 +112,7 @@ export function Hero() {
         animate={{ opacity: 1, y: [0, 8, 0] }}
         transition={{
           opacity: { delay: 3 },
-          y: { duration: 2, repeat: Infinity, ease: 'easeInOut', delay: 3 },
+          y: { duration: 2, repeat: Infinity, ease: "easeInOut", delay: 3 },
         }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2"
       >
@@ -123,5 +126,5 @@ export function Hero() {
         </a>
       </motion.div>
     </section>
-  )
+  );
 }
