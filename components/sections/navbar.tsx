@@ -1,49 +1,46 @@
-'use client'
+"use client";
 
-import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'motion/react'
-import { cn } from '@/lib/utils'
-import { ThemeToggle } from '@/components/theme-toggle'
-import { Menu, X } from 'lucide-react'
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "motion/react";
+import { cn } from "@/lib/utils";
+import { ThemeToggle } from "@/components/theme-toggle";
+import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { label: 'Sobre', href: '#about' },
-  { label: 'Experiencia', href: '#experience' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Projetos', href: '#projects' },
-  { label: 'Contato', href: '#contact' },
-]
+  { label: "Sobre", href: "#about" },
+  { label: "Experiencia", href: "#experience" },
+  { label: "Skills", href: "#skills" },
+  { label: "Projetos", href: "#projects" },
+  { label: "Contato", href: "#contact" },
+];
 
 export function Navbar() {
-  const [scrolled, setScrolled] = useState(false)
-  const [mobileOpen, setMobileOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50)
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      transition={{ duration: 0.6, ease: 'easeOut' }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         scrolled
-          ? 'bg-background/80 backdrop-blur-lg border-b border-border'
-          : 'bg-transparent'
+          ? "bg-background/80 backdrop-blur-lg border-b border-border"
+          : "bg-transparent",
       )}
     >
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <a
-          href="#"
-          className="font-mono text-lg font-bold text-primary"
-        >
-          {'<VL />'}
+        <a href="#" className="font-mono text-lg font-bold text-primary">
+          {"<VL />"}
         </a>
 
         {/* Desktop Nav */}
@@ -63,9 +60,9 @@ export function Navbar() {
         <div className="hidden items-center gap-3 md:flex">
           <ThemeToggle />
           <a
-            href="/Victor_Luiz_CV.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/CV victor Luiz soares - front end.pdf"
+            download
+            aria-label="Baixar Currículo"
             className="rounded-lg border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-medium text-primary transition-all hover:bg-primary/20"
           >
             Curriculo
@@ -78,7 +75,7 @@ export function Navbar() {
           <button
             className="text-foreground"
             onClick={() => setMobileOpen(!mobileOpen)}
-            aria-label={mobileOpen ? 'Fechar menu' : 'Abrir menu'}
+            aria-label={mobileOpen ? "Fechar menu" : "Abrir menu"}
           >
             {mobileOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -90,7 +87,7 @@ export function Navbar() {
         {mobileOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
+            animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             className="overflow-hidden border-b border-border bg-background/95 backdrop-blur-lg md:hidden"
           >
@@ -108,9 +105,9 @@ export function Navbar() {
               ))}
               <li>
                 <a
-                  href="/Victor_Luiz_CV.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/CV victor Luiz soares - front end.pdf"
+                  download
+                  aria-label="Baixar Currículo"
                   className="inline-block rounded-lg border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-medium text-primary"
                 >
                   Curriculo
@@ -121,5 +118,5 @@ export function Navbar() {
         )}
       </AnimatePresence>
     </motion.header>
-  )
+  );
 }
