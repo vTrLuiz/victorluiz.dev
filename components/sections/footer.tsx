@@ -1,15 +1,15 @@
-'use client'
+"use client";
 
-import { Github, Linkedin, Mail } from 'lucide-react'
+import { Github, Linkedin, Mail } from "lucide-react";
 
 export function Footer() {
   return (
     <footer className="border-t border-border px-6 py-8">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 sm:flex-row">
         <div className="flex items-center gap-2">
-          <span className="font-mono text-sm text-primary">{'<VL />'}</span>
+          <span className="font-mono text-sm text-primary">{"<VL />"}</span>
           <span className="text-xs text-muted-foreground">
-            {'// '}Victor Luiz Soares
+            {"// "}Victor Luiz Soares
           </span>
         </div>
 
@@ -33,7 +33,7 @@ export function Footer() {
             <Linkedin size={16} />
           </a>
           <a
-            href="mailto:victorluiz.dev@gmail.com"
+            href="mailto:contatovluiz@gmail.com"
             className="text-muted-foreground transition-colors hover:text-primary"
             aria-label="Email"
           >
@@ -46,5 +46,5 @@ export function Footer() {
         </p>
       </div>
     </footer>
-  )
+  );
 }

@@ -1,36 +1,36 @@
-'use client'
+"use client";
 
-import { InView } from '@/components/motion/in-view'
-import { TextEffect } from '@/components/motion/text-effect'
-import { motion } from 'motion/react'
-import { Github, Linkedin, Mail, MapPin, ArrowUpRight } from 'lucide-react'
+import { InView } from "@/components/motion/in-view";
+import { TextEffect } from "@/components/motion/text-effect";
+import { motion } from "motion/react";
+import { Github, Linkedin, Mail, MapPin, ArrowUpRight } from "lucide-react";
 
 const contactLinks = [
   {
     icon: Mail,
-    label: 'Email',
-    value: 'victorluiz.dev@gmail.com',
-    href: 'mailto:victorluiz.dev@gmail.com',
+    label: "Email",
+    value: "contatovluiz@gmail.com",
+    href: "mailto:contatovluiz@gmail.com",
   },
   {
     icon: Linkedin,
-    label: 'LinkedIn',
-    value: '/in/vluizdev',
-    href: 'https://www.linkedin.com/in/vluizdev/',
+    label: "LinkedIn",
+    value: "/in/vluizdev",
+    href: "https://www.linkedin.com/in/vluizdev/",
   },
   {
     icon: Github,
-    label: 'GitHub',
-    value: '@vTrLuiz',
-    href: 'https://github.com/vTrLuiz/',
+    label: "GitHub",
+    value: "@vTrLuiz",
+    href: "https://github.com/vTrLuiz/",
   },
   {
     icon: MapPin,
-    label: 'Localizacao',
-    value: 'Rio de Janeiro, Brasil',
+    label: "Localizacao",
+    value: "Rio de Janeiro, Brasil",
     href: null,
   },
-]
+];
 
 export function Contact() {
   return (
@@ -42,11 +42,11 @@ export function Contact() {
             visible: { opacity: 1, y: 0 },
           }}
           transition={{ duration: 0.6 }}
-          viewOptions={{ once: true, margin: '-100px' }}
+          viewOptions={{ once: true, margin: "-100px" }}
         >
           <div className="mb-4">
             <span className="font-mono text-sm text-primary">
-              {'// contato'}
+              {"// contato"}
             </span>
           </div>
           <h2 className="mb-4 text-3xl font-bold text-foreground md:text-4xl">
@@ -54,7 +54,8 @@ export function Contact() {
           </h2>
           <p className="mx-auto mb-12 max-w-lg text-base leading-relaxed text-muted-foreground">
             Estou aberto a novas oportunidades e projetos interessantes. Se voce
-            quer conversar sobre tecnologia ou tem uma proposta, entre em contato!
+            quer conversar sobre tecnologia ou tem uma proposta, entre em
+            contato!
           </p>
         </InView>
 
@@ -67,15 +68,15 @@ export function Contact() {
                 visible: { opacity: 1, y: 0 },
               }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
-              viewOptions={{ once: true, margin: '-50px' }}
+              viewOptions={{ once: true, margin: "-50px" }}
             >
               {link.href ? (
                 <a
                   href={link.href}
-                  target={link.href.startsWith('http') ? '_blank' : undefined}
+                  target={link.href.startsWith("http") ? "_blank" : undefined}
                   rel={
-                    link.href.startsWith('http')
-                      ? 'noopener noreferrer'
+                    link.href.startsWith("http")
+                      ? "noopener noreferrer"
                       : undefined
                   }
                   className="group flex items-center gap-4 rounded-xl border border-border bg-card p-5 text-left transition-all hover:border-primary/30 hover:bg-card/80"
@@ -125,7 +126,7 @@ export function Contact() {
         >
           <div className="mt-12">
             <a
-              href="mailto:victorluiz.dev@gmail.com"
+              href="mailto:contatovluiz@gmail.com"
               className="inline-flex items-center gap-2 rounded-lg bg-primary px-8 py-3.5 text-sm font-semibold text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/25"
             >
               <Mail size={16} />
@@ -135,5 +136,5 @@ export function Contact() {
         </InView>
       </div>
     </section>
-  )
+  );
 }
