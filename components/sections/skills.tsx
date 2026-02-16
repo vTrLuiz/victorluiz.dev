@@ -24,33 +24,68 @@ const skillCategories = [
   {
     title: "Frontend",
     skills: [
-      { name: "React", highlight: true, icon: SiReact },
-      { name: "TypeScript", highlight: true, icon: SiTypescript },
-      { name: "Next.js", highlight: false, icon: SiNextdotjs },
-      { name: "Tailwind CSS", highlight: true, icon: SiTailwindcss },
-      { name: "HTML/CSS", highlight: false, icon: SiHtml5 },
-      { name: "JavaScript", highlight: false, icon: SiJavascript },
+      { name: "React", highlight: true, icon: SiReact, color: "#61DAFB" },
+      {
+        name: "TypeScript",
+        highlight: true,
+        icon: SiTypescript,
+        color: "#3178C6",
+      },
+      { name: "Next.js", highlight: true, icon: SiNextdotjs, color: "#404040" },
+      {
+        name: "Tailwind CSS",
+        highlight: true,
+        icon: SiTailwindcss,
+        color: "#06B6D4",
+      },
+      { name: "HTML/CSS", highlight: true, icon: SiHtml5, color: "#E34F26" },
+      {
+        name: "JavaScript",
+        highlight: true,
+        icon: SiJavascript,
+        color: "#F7DF1E",
+      },
     ],
   },
   {
     title: "Backend",
     skills: [
-      { name: "C# / .NET", highlight: true, icon: SiSharp },
-      { name: "Node.js", highlight: true, icon: SiNodedotjs },
-      { name: "PostgreSQL", highlight: false, icon: SiPostgresql },
-      { name: "REST APIs", highlight: true, icon: Database },
-      { name: "BFF Pattern", highlight: false, icon: SiDotnet },
+      { name: "C# / .NET", highlight: true, icon: SiSharp, color: "#512BD4" },
+      { name: "Node.js", highlight: true, icon: SiNodedotjs, color: "#339933" },
+      {
+        name: "PostgreSQL",
+        highlight: true,
+        icon: SiPostgresql,
+        color: "#4169E1",
+      },
+      { name: "REST APIs", highlight: true, icon: Database, color: "#FF6B6B" },
+      {
+        name: "BFF Pattern",
+        highlight: true,
+        icon: SiDotnet,
+        color: "#512BD4",
+      },
     ],
   },
   {
     title: "DevOps & Cloud",
     skills: [
-      { name: "Google Cloud", highlight: false, icon: SiGooglecloud },
-      { name: "Apigee", highlight: false, icon: Cloud },
-      { name: "Terraform", highlight: false, icon: SiTerraform },
-      { name: "CI/CD", highlight: true, icon: SiGitlab },
-      { name: "GitLab", highlight: false, icon: SiGitlab },
-      { name: "Git", highlight: true, icon: SiGit },
+      {
+        name: "Google Cloud",
+        highlight: true,
+        icon: SiGooglecloud,
+        color: "#4285F4",
+      },
+      { name: "Apigee", highlight: true, icon: Cloud, color: "#FF6B35" },
+      {
+        name: "Terraform",
+        highlight: true,
+        icon: SiTerraform,
+        color: "#7B42BC",
+      },
+      { name: "CI/CD", highlight: true, icon: SiGitlab, color: "#FC6D26" },
+      { name: "GitLab", highlight: true, icon: SiGitlab, color: "#FC6D26" },
+      { name: "Git", highlight: true, icon: SiGit, color: "#F05032" },
     ],
   },
 ];
@@ -125,17 +160,38 @@ export function Skills() {
                           delay: skillIndex * 0.05,
                           ease: "easeOut",
                         }}
-                        whileHover={{ scale: 1.05, y: -2 }}
-                        className="cursor-default"
+                        whileHover={{
+                          scale: 1.05,
+                          y: -2,
+                        }}
+                        className="group/skill cursor-default"
                       >
                         <span
                           className={`inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium transition-all ${
                             skill.highlight
-                              ? "border border-primary/30 bg-primary/10 text-primary shadow-sm hover:border-primary/50 hover:bg-primary/15"
+                              ? "border border-primary/30 bg-primary/10 text-primary shadow-sm group-hover/skill:shadow-lg"
                               : "border border-border bg-secondary/50 text-muted-foreground hover:border-border/80 hover:bg-secondary"
                           }`}
+                          style={{
+                            // @ts-ignore
+                            "--skill-color": skill.color,
+                          }}
+                          onMouseEnter={(e) => {
+                            if (skill.highlight && skill.color) {
+                              e.currentTarget.style.borderColor = skill.color;
+                              e.currentTarget.style.backgroundColor = `${skill.color}15`;
+                              e.currentTarget.style.color = skill.color;
+                            }
+                          }}
+                          onMouseLeave={(e) => {
+                            if (skill.highlight) {
+                              e.currentTarget.style.borderColor = "";
+                              e.currentTarget.style.backgroundColor = "";
+                              e.currentTarget.style.color = "";
+                            }
+                          }}
                         >
-                          <Icon className="h-4 w-4 flex-shrink-0" />
+                          <Icon className="h-4 w-4 flex-shrink-0 transition-transform group-hover/skill:scale-110" />
                           <span className="whitespace-nowrap">
                             {skill.name}
                           </span>
