@@ -1,47 +1,47 @@
-'use client'
+"use client";
 
-import { InView } from '@/components/motion/in-view'
-import { motion } from 'motion/react'
-import { ExternalLink, Github, Folder } from 'lucide-react'
+import { InView } from "@/components/motion/in-view";
+import { motion } from "motion/react";
+import { ExternalLink, Github, Folder } from "lucide-react";
 
 const projects = [
   {
-    title: 'Devfix.pro',
+    title: "Devfix.pro",
     description:
-      'Plataforma web moderna construida com TypeScript e Next.js. Projeto pessoal focado em solucoes praticas para desenvolvedores, com deploy automatizado na Vercel.',
-    tech: ['TypeScript', 'Next.js', 'Tailwind CSS', 'Vercel'],
-    github: 'https://github.com/vTrLuiz/Devfix.pro',
-    live: 'https://devfix-nine.vercel.app',
+      "Plataforma web moderna construida com TypeScript e Next.js. Projeto pessoal focado em solucoes praticas para desenvolvedores, com deploy automatizado na Vercel.",
+    tech: ["TypeScript", "Next.js", "Tailwind CSS", "Vercel"],
+    github: "https://github.com/vTrLuiz/Devfix.pro",
+    live: "https://devfix-nine.vercel.app",
     featured: true,
   },
   {
-    title: 'Capputeeno',
+    title: "Capputeeno",
     description:
-      'E-commerce frontend construido com Next.js e TypeScript. Interface responsiva para listagem e compra de produtos, com gerenciamento de estado e integracao com API.',
-    tech: ['TypeScript', 'Next.js', 'CSS', 'API REST'],
-    github: 'https://github.com/vTrLuiz/Capputeeno-Front',
-    live: 'https://capputeeno-vtrluiz.vercel.app/',
+      "E-commerce frontend construido com Next.js e TypeScript. Interface responsiva para listagem e compra de produtos, com gerenciamento de estado e integracao com API.",
+    tech: ["TypeScript", "Next.js", "CSS", "API REST"],
+    github: "https://github.com/vTrLuiz/Capputeeno-Front",
+    live: "https://capputeeno-vtrluiz.vercel.app/",
     featured: true,
   },
   {
-    title: 'API E-commerce',
+    title: "API E-commerce",
     description:
-      'Backend REST API para e-commerce construido com JavaScript/Node.js. Endpoints para gerenciamento de produtos, categorias e pedidos.',
-    tech: ['JavaScript', 'Node.js', 'REST API'],
-    github: 'https://github.com/vTrLuiz/Api-Ecommerce',
+      "Backend REST API para e-commerce construido com JavaScript/Node.js. Endpoints para gerenciamento de produtos, categorias e pedidos.",
+    tech: ["JavaScript", "Node.js", "REST API"],
+    github: "https://github.com/vTrLuiz/Api-Ecommerce",
     live: null,
-    featured: false,
+    featured: true,
   },
   {
-    title: 'Assessorias - Junto Seguros',
+    title: "Assessorias - Junto Seguros",
     description:
-      'Produto digital que conecta corretores a empresas. Inclui dashboard de performance, gestao de pagamentos e upload de notas fiscais. Gerou R$ 1.2M+ em seguros.',
-    tech: ['React', 'TypeScript', '.NET C#', 'PostgreSQL'],
+      "Produto digital que conecta corretores a empresas. Inclui dashboard de performance, gestao de pagamentos e upload de notas fiscais. Gerou R$ 1.2M+ em seguros.",
+    tech: ["React", "TypeScript", ".NET C#", "PostgreSQL"],
     github: null,
     live: null,
     featured: true,
   },
-]
+];
 
 export function Projects() {
   return (
@@ -53,11 +53,11 @@ export function Projects() {
             visible: { opacity: 1, y: 0 },
           }}
           transition={{ duration: 0.6 }}
-          viewOptions={{ once: true, margin: '-100px' }}
+          viewOptions={{ once: true, margin: "-100px" }}
         >
           <div className="mb-4">
             <span className="font-mono text-sm text-primary">
-              {'// projetos'}
+              {"// projetos"}
             </span>
           </div>
           <h2 className="mb-12 text-3xl font-bold text-foreground md:text-4xl">
@@ -74,15 +74,13 @@ export function Projects() {
                 visible: { opacity: 1, y: 0, scale: 1 },
               }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewOptions={{ once: true, margin: '-50px' }}
+              viewOptions={{ once: true, margin: "-50px" }}
             >
               <motion.div
                 whileHover={{ y: -4 }}
                 transition={{ duration: 0.2 }}
                 className={`group relative flex h-full flex-col rounded-xl border bg-card p-6 transition-all hover:border-primary/30 md:p-8 ${
-                  project.featured
-                    ? 'border-primary/20'
-                    : 'border-border'
+                  project.featured ? "border-primary/20" : "border-border"
                 }`}
               >
                 {project.featured && (
@@ -142,5 +140,5 @@ export function Projects() {
         </div>
       </div>
     </section>
-  )
+  );
 }
