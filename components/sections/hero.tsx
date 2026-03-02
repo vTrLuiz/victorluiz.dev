@@ -25,7 +25,7 @@ export function Hero() {
           className="mb-6"
         >
           <span className="inline-block rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 font-mono text-sm text-primary">
-            Full-Stack Software Engineer
+            Desenvolvedor Front-End
           </span>
         </motion.div>
 
@@ -47,9 +47,8 @@ export function Hero() {
           as="p"
           className="mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl"
         >
-          Desenvolvedor Full-Stack com 4+ anos de experiencia criando aplicacoes
-          web escalaveis e de alta performance com React, TypeScript, Next.js e
-          .NET
+          Desenvolvedor Front-End com 4+ anos de experiência criando aplicações
+          web escaláveis e de alta performance com React, TypeScript e Next.js
         </TextEffect>
 
         <motion.div

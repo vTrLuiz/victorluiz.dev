@@ -2,6 +2,7 @@
 
 import { InView } from "@/components/motion/in-view";
 import { motion } from "motion/react";
+import { useState } from "react";
 import {
   SiReact,
   SiTypescript,
@@ -24,33 +25,94 @@ const skillCategories = [
   {
     title: "Frontend",
     skills: [
-      { name: "React", highlight: true, icon: SiReact },
-      { name: "TypeScript", highlight: true, icon: SiTypescript },
-      { name: "Next.js", highlight: false, icon: SiNextdotjs },
-      { name: "Tailwind CSS", highlight: true, icon: SiTailwindcss },
-      { name: "HTML/CSS", highlight: false, icon: SiHtml5 },
-      { name: "JavaScript", highlight: false, icon: SiJavascript },
+      { name: "React", highlight: true, icon: SiReact, color: "#61DAFB" },
+      {
+        name: "TypeScript",
+        highlight: true,
+        icon: SiTypescript,
+        color: "#3178C6",
+      },
+      {
+        name: "Next.js",
+        highlight: true,
+        icon: SiNextdotjs,
+        color: "#FFFFFF",
+        isGradient: false,
+      },
+      {
+        name: "Tailwind CSS",
+        highlight: true,
+        icon: SiTailwindcss,
+        color: "#06B6D4",
+      },
+      { name: "HTML/CSS", highlight: true, icon: SiHtml5, color: "#E34F26" },
+      {
+        name: "JavaScript",
+        highlight: true,
+        icon: SiJavascript,
+        color: "#F7DF1E",
+      },
     ],
   },
   {
     title: "Backend",
     skills: [
-      { name: "C# / .NET", highlight: true, icon: SiSharp },
-      { name: "Node.js", highlight: true, icon: SiNodedotjs },
-      { name: "PostgreSQL", highlight: false, icon: SiPostgresql },
-      { name: "REST APIs", highlight: true, icon: Database },
-      { name: "BFF Pattern", highlight: false, icon: SiDotnet },
+      { name: "C# / .NET", highlight: true, icon: SiSharp, color: "#512BD4" },
+      { name: "Node.js", highlight: true, icon: SiNodedotjs, color: "#339933" },
+      {
+        name: "PostgreSQL",
+        highlight: true,
+        icon: SiPostgresql,
+        color: "#4169E1",
+      },
+      { name: "REST APIs", highlight: true, icon: Database, color: "#14B8A6" },
+      {
+        name: "BFF Pattern",
+        highlight: true,
+        icon: SiDotnet,
+        color: "#512BD4",
+      },
     ],
   },
   {
     title: "DevOps & Cloud",
     skills: [
-      { name: "Google Cloud", highlight: false, icon: SiGooglecloud },
-      { name: "Apigee", highlight: false, icon: Cloud },
-      { name: "Terraform", highlight: false, icon: SiTerraform },
-      { name: "CI/CD", highlight: true, icon: SiGitlab },
-      { name: "GitLab", highlight: false, icon: SiGitlab },
-      { name: "Git", highlight: true, icon: SiGit },
+      {
+        name: "Google Cloud",
+        highlight: true,
+        icon: SiGooglecloud,
+        color:
+          "linear-gradient(135deg, #4285F4 0%, #DB4437 25%, #F4B400 50%, #0F9D58 100%)",
+        isGradient: true,
+      },
+      {
+        name: "Apigee",
+        highlight: true,
+        icon: Cloud,
+        color: "linear-gradient(135deg, #FF6D00 0%, #FFA726 100%)",
+        isGradient: true,
+      },
+      {
+        name: "Terraform",
+        highlight: true,
+        icon: SiTerraform,
+        color: "#7B42BC",
+      },
+      {
+        name: "CI/CD",
+        highlight: true,
+        icon: SiGitlab,
+        color: "linear-gradient(135deg, #FC6D26 0%, #E24329 100%)",
+        isGradient: true,
+      },
+      {
+        name: "GitLab",
+        highlight: true,
+        icon: SiGitlab,
+        color: "linear-gradient(135deg, #FC6D26 0%, #E24329 100%)",
+        isGradient: true,
+      },
+      { name: "Git", highlight: true, icon: SiGit, color: "#F05032" },
     ],
   },
 ];
@@ -73,6 +135,87 @@ const tools = [
   "JavaScript",
   "Docker",
 ];
+
+interface SkillBadgeProps {
+  skill: {
+    name: string;
+    highlight: boolean;
+    icon: any;
+    color: string;
+    isGradient?: boolean;
+  };
+  index: number;
+}
+
+function SkillBadge({ skill, index }: SkillBadgeProps) {
+  const [isHovered, setIsHovered] = useState(false);
+  const Icon = skill.icon;
+
+  const getBorderColor = () => {
+    if (!isHovered) return "hsl(var(--primary) / 0.3)";
+    return skill.color;
+  };
+
+  const getTextStyle = () => {
+    if (!isHovered) return { color: "hsl(var(--primary))" };
+    if (skill.isGradient) {
+      return {
+        backgroundImage: skill.color,
+        WebkitBackgroundClip: "text",
+        WebkitTextFillColor: "transparent",
+        backgroundClip: "text",
+      };
+    }
+    return { color: skill.color };
+  };
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, scale: 0.8 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true }}
+      transition={{
+        duration: 0.3,
+        delay: index * 0.05,
+        ease: "easeOut",
+      }}
+      whileHover={{ scale: 1.05, y: -2 }}
+      onHoverStart={() => setIsHovered(true)}
+      onHoverEnd={() => setIsHovered(false)}
+      className="cursor-default"
+    >
+      <span
+        className="inline-flex items-center gap-2 rounded-lg border px-3 py-2 text-sm font-medium transition-all duration-300"
+        style={{
+          borderColor: getBorderColor(),
+          backgroundColor: "hsl(var(--primary) / 0.1)",
+        }}
+      >
+        {skill.isGradient && isHovered ? (
+          <span
+            className="inline-flex items-center justify-center"
+            style={{
+              backgroundImage: skill.color,
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+            }}
+          >
+            <Icon className="h-4 w-4 flex-shrink-0" />
+          </span>
+        ) : (
+          <Icon
+            className="h-4 w-4 flex-shrink-0 transition-colors duration-300"
+            style={isHovered && !skill.isGradient ? { color: skill.color } : {}}
+          />
+        )}
+        <span className="whitespace-nowrap" style={getTextStyle()}>
+          {skill.name}
+        </span>
+      </span>
+    </motion.div>
+  );
+}
 
 export function Skills() {
   return (
@@ -112,37 +255,13 @@ export function Skills() {
                   {category.title}
                 </h3>
                 <div className="flex flex-wrap gap-2.5">
-                  {category.skills.map((skill, skillIndex) => {
-                    const Icon = skill.icon;
-                    return (
-                      <motion.div
-                        key={skill.name}
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{
-                          duration: 0.3,
-                          delay: skillIndex * 0.05,
-                          ease: "easeOut",
-                        }}
-                        whileHover={{ scale: 1.05, y: -2 }}
-                        className="cursor-default"
-                      >
-                        <span
-                          className={`inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium transition-all ${
-                            skill.highlight
-                              ? "border border-primary/30 bg-primary/10 text-primary shadow-sm hover:border-primary/50 hover:bg-primary/15"
-                              : "border border-border bg-secondary/50 text-muted-foreground hover:border-border/80 hover:bg-secondary"
-                          }`}
-                        >
-                          <Icon className="h-4 w-4 flex-shrink-0" />
-                          <span className="whitespace-nowrap">
-                            {skill.name}
-                          </span>
-                        </span>
-                      </motion.div>
-                    );
-                  })}
+                  {category.skills.map((skill, skillIndex) => (
+                    <SkillBadge
+                      key={skill.name}
+                      skill={skill}
+                      index={skillIndex}
+                    />
+                  ))}
                 </div>
               </div>
             </InView>

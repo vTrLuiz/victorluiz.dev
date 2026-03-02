@@ -1,12 +1,13 @@
-import { Navbar } from '@/components/sections/navbar'
-import { Hero } from '@/components/sections/hero'
-import { About } from '@/components/sections/about'
-import { Experience } from '@/components/sections/experience'
-import { Skills } from '@/components/sections/skills'
-import { Projects } from '@/components/sections/projects'
-import { Contact } from '@/components/sections/contact'
-import { Footer } from '@/components/sections/footer'
-import { AnimatedBackground } from '@/components/motion/animated-background'
+import { Navbar } from "@/components/sections/navbar";
+import { Hero } from "@/components/sections/hero";
+import { About } from "@/components/sections/about";
+import { Experience } from "@/components/sections/experience";
+import { Skills } from "@/components/sections/skills";
+import { Projects } from "@/components/sections/projects";
+import { Languages } from "@/components/sections/languages";
+import { Contact } from "@/components/sections/contact";
+import { Footer } from "@/components/sections/footer";
+import { AnimatedBackground } from "@/components/motion/animated-background";
 
 export default function Page() {
   return (
@@ -19,9 +20,10 @@ export default function Page() {
         <Experience />
         <Skills />
         <Projects />
+        <Languages />
         <Contact />
         <Footer />
       </div>
     </main>
-  )
+  );
 }
