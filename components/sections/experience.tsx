@@ -6,12 +6,12 @@ import { Briefcase, ExternalLink } from "lucide-react";
 
 const experiences = [
   {
-    role: "Analista de TI Jr.",
+    role: "Desenvolvedor Front-end Jr.",
     company: "Junto Seguros",
     period: "Out 2024 - Presente",
     location: "Rio de Janeiro, Brasil",
     description:
-      'Atuei como Desenvolvedor Frontend com contribuicoes no backend via BFF em .NET (C#). Participei da criacao do produto "Assessorias", conectando corretores a empresas digitalmente.',
+      'Atuei como Desenvolvedor Frontend com contribuições no backend via BFF em .NET (C#). Participei da criação do produto "Assessorias", conectando corretores a empresas digitalmente.',
     achievements: [
       "Dashboard de Assessorias com indicadores de performance e graficos",
       "Tela de Pagamentos para gestao de recebimentos",
@@ -26,7 +26,7 @@ const experiences = [
     period: "Jan 2024 - Set 2024",
     location: "Rio de Janeiro, Brasil",
     description:
-      "Liderei projetos de integracao ao GCP utilizando Apigee. Criei documentacao de suporte e realizei revisoes de codigo.",
+      "Liderei projetos de integração ao GCP utilizando Apigee. Criei documentação de suporte e realizei revisões de código.",
     achievements: [
       "Desenvolvimento de APIs com Apigee (Google Cloud)",
       "Provisionamento automatizado com Terraform",
@@ -41,11 +41,11 @@ const experiences = [
     period: "Ago 2021 - Mai 2023",
     location: "Rio de Janeiro, Brasil",
     description:
-      "Desenvolvimento de aplicacoes frontend para sistemas internos da Marinha do Brasil, contribuindo para a modernizacao digital da instituicao.",
+      "Desenvolvimento de aplicações frontend para sistemas internos da Marinha do Brasil, contribuindo para a modernização digital da instituição.",
     achievements: [
       "Desenvolvimento de interfaces para sistemas internos",
-      "Implementacao de componentes reutilizaveis",
-      "Trabalho em ambiente com alta seguranca de dados",
+      "Implementação de componentes reutilizáveis",
+      "Trabalho em ambiente com alta segurança de dados",
     ],
     tech: ["React", "JavaScript", "CSS", "HTML"],
   },

@@ -20,7 +20,7 @@ const projects: Project[] = [
   {
     title: "Capputeeno",
     description:
-      "E-commerce frontend construido com Next.js e TypeScript. Interface responsiva para listagem e compra de produtos, com gerenciamento de estado e integracao com API.",
+      "E-commerce frontend construído com Next.js e TypeScript. Interface responsiva para listagem e compra de produtos, com gerenciamento de estado e integração com API.",
     tech: ["TypeScript", "Next.js", "CSS", "API REST"],
     github: "https://github.com/vTrLuiz/Capputeeno-Front",
     live: "https://capputeeno-vtrluiz.vercel.app/",
@@ -30,7 +30,7 @@ const projects: Project[] = [
   {
     title: "Mia Brigaderia",
     description:
-      "Website elegante para uma brigaderia artesanal, apresentando produtos com um design moderno e atraente. Interface focada na experiencia do usuario.",
+      "Website elegante para uma brigaderia artesanal, apresentando produtos com um design moderno e atraente. Interface focada na experiência do usuário.",
     tech: ["JavaScript", "HTML", "CSS", "Responsive Design"],
     github: "https://github.com/vTrLuiz/miabrigaderia",
     live: "https://vtrluiz.github.io/miabrigaderia/",
@@ -40,7 +40,7 @@ const projects: Project[] = [
   {
     title: "FortPred",
     description:
-      "Plataforma de previsoes e analises desenvolvida para fornecer insights e dados estrategicos. Sistema robusto focado em performance e confiabilidade.",
+      "Plataforma de previsões e análises desenvolvida para fornecer insights e dados estratégicos. Sistema robusto focado em performance e confiabilidade.",
     tech: ["JavaScript", "React", "Node.js", "Data Analysis"],
     github: "https://github.com/vTrLuiz/fortpred",
     live: "http://fortpred.com.br/",
@@ -207,7 +207,7 @@ export function Projects() {
             </span>
           </div>
           <h2 className="mb-12 text-3xl font-bold text-foreground md:text-4xl">
-            O que construi
+            O que construí
           </h2>
         </InView>
 

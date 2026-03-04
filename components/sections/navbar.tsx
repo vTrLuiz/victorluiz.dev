@@ -8,7 +8,7 @@ import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { label: "Sobre", href: "#about" },
-  { label: "Experiencia", href: "#experience" },
+  { label: "Experiência", href: "#experience" },
   { label: "Skills", href: "#skills" },
   { label: "Projetos", href: "#projects" },
   { label: "Contato", href: "#contact" },
@@ -65,7 +65,7 @@ export function Navbar() {
             aria-label="Baixar Currículo"
             className="rounded-lg border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-medium text-primary transition-all hover:bg-primary/20"
           >
-            Curriculo
+            Currículo
           </a>
         </div>
 
@@ -110,7 +110,7 @@ export function Navbar() {
                   aria-label="Baixar Currículo"
                   className="inline-block rounded-lg border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-medium text-primary"
                 >
-                  Curriculo
+                  Currículo
                 </a>
               </li>
             </ul>

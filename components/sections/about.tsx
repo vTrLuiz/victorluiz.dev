@@ -63,16 +63,16 @@ export function About() {
           >
             <div className="space-y-4">
               <p className="text-base leading-relaxed text-muted-foreground">
-                Desenvolvedor Full-Stack com 4+ anos de experiencia especializado
-                no desenvolvimento de aplicacoes web escalaveis e de alta
-                performance. Tenho expertise solida em{' '}
-                <span className="font-medium text-foreground">
+Desenvolvedor Full-Stack com 4+ anos de experiência especializado
+                no desenvolvimento de aplicações web escaláveis e de alta
+                performance. Tenho expertise sólida em{' '}
+                  <span className="font-medium text-foreground">
                   React, TypeScript e Next.js
                 </span>{' '}
-                para criacao de interfaces responsivas, alem de experiencia robusta
+                para criação de interfaces responsivas, além de experiência robusta
                 em backend com{' '}
-                <span className="font-medium text-foreground">.NET C#</span> e
-                integracoes via BFF.
+                  <span className="font-medium text-foreground">.NET C#</span> e
+                integrações via BFF.
               </p>
               <p className="text-base leading-relaxed text-muted-foreground">
                 Competencias comprovadas em computacao em nuvem{' '}

@@ -26,7 +26,7 @@ const contactLinks = [
   },
   {
     icon: MapPin,
-    label: "Localizacao",
+    label: "Localização",
     value: "Rio de Janeiro, Brasil",
     href: null,
   },
@@ -53,7 +53,7 @@ export function Contact() {
             Vamos trabalhar juntos?
           </h2>
           <p className="mx-auto mb-12 max-w-lg text-base leading-relaxed text-muted-foreground">
-            Estou aberto a novas oportunidades e projetos interessantes. Se voce
+            Estou aberto a novas oportunidades e projetos interessantes. Se você
             quer conversar sobre tecnologia ou tem uma proposta, entre em
             contato!
           </p>
